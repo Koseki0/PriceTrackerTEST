@@ -44,18 +44,17 @@
 
     <script>
         const priceDiv = document.getElementById('price');
-        
-        function updatePrice() {
-            // Generuje losową cenę od 50.00 do 150.00 PLN
-            const randomPrice = (50 + Math.random() * 100).toFixed(2);
-            priceDiv.textContent = `${randomPrice} PLN`;
-            
-            // Opcjonalnie: logowanie w konsoli przeglądarki dla ułatwienia debugowania
-            console.log(`Nowa cena: ${randomPrice} PLN`);
-        }
 
-        // Zmiana ceny co 5 sekund (5000 milisekund)
-        setInterval(updatePrice, 5000);
+function updatePrice() {
+    const randomPrice = (50 + Math.random() * 100).toFixed(2);
+    priceDiv.textContent = `${randomPrice} PLN`;
+}
+
+// 1. Wywołaj funkcję od razu po załadowaniu strony, aby nadpisać "100"
+updatePrice();
+
+// 2. Dopiero potem ustaw interwał co 5 sekund
+setInterval(updatePrice, 5000);
     </script>
 </body>
 </html>
